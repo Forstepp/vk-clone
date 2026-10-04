@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vk-blue: #2a5885;
+  --color-vk-bg: #edeef0;
+  --color-vk-border: #e7e8ec;
+  --color-vk-hover: #dce1e6;
+  --color-vk-text: #000000;
+  --color-vk-gray: #828282;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-vk-bg);
+    color: var(--color-vk-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Arial', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  /* Отступ для iPhone с челкой (Safe Area) */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  .vk-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-vk-border);
+  }
+
+  .vk-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    color: var(--color-vk-blue);
+    transition: background-color 0.2s;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .vk-sidebar-item:hover {
+    background-color: var(--color-vk-hover);
+  }
+
+  .vk-sidebar-item.active {
+    background-color: var(--color-vk-hover);
+  }
+}
